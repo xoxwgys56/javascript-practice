@@ -95,6 +95,7 @@ console.log(o1 === o2, o1.score === o2.score, o2.name === o1.name)
 
 ---
 ## Immutable function
+-> **수정 중**
 
 ``` js
 function fn(person) {
