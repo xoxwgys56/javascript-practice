@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow DOM</title>
+</head>
+<body>
+    <label>LABEL</label>
+    <div id="from-mordor"></div>
+    <shadow-input></shadow-input>
+        
+    <template id="template1">
+        <!-- template 태그는 렌더링되지 않는다. -->
+        <label>insert your email</label><input>
+        <style>label { color: #ff0}</style>
+    </template>
+
+    <script>
+        const initShadowDom = true
+        const domId = '#from-mordor'
+
+        if (initShadowDom) {
+            document.querySelector(domId).attachShadow({mode: 'open'});
+            // document.querySelector(domId).shadowRoot.innerHTML = "<p>Came from shadow</p>"
+            document.querySelector(domId).shadowRoot.append(document.querySelector('#template1').content.cloneNode(true));
+        }
+    </script>
+    <script src="./web_components.js"></script>
+</body>
+</html>
