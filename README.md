@@ -10,4 +10,4 @@
 
 ## References
 
-- none
+- [modern javascript tutorial](https://ko.javascript.info/)
