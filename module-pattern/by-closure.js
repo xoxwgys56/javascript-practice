@@ -1,3 +1,6 @@
+'use strict';
+
+// 익명함수를 이용한다.
 const counter = (function() {
     let privateValue = 0;
 
