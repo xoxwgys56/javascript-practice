@@ -157,4 +157,15 @@ counter.decrement();
 console.log(counter.value());
 ```
 
+## Closure scope chain
 
+모든 클로저에는 세가지 범위(scope)가 있다.
+
+- local scope, own scope
+- outer function scope
+- global scope
+
+우리는 클로저에 대해 세가지 범위 모두 접근할 수 있지만, 중첩된 내부 함수가 있는 경우 종종 실수할 수 있다:
+
+```js
+```
