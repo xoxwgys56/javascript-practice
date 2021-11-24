@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>correct by let</title>
+</head>
+<body>
+    <p id="help">Help</p>
+    <p>email:<input type="text" id="email" name="email" /></p>
+    <p>name:<input type="text" id="name" name="name" /></p>
+    <p>age:<input type="text" id="age" name="age" /></p>
+    <script>
+        function showHelp(help) {
+            document.getElementById("help").innerHTML = help;
+        }
+
+        function setupHelp() {
+            var helpText = [
+                {"id": "email", "help": "Your email address"},
+                {"id": "name", "help": "Your full name"},
+                {"id": "age", "help": "Your age"},
+            ];
+
+            for (var i=0; i<helpText.length; i++) {
+                /** 
+                 * change `var` to `let`
+                 * 
+                 * 모든 클로저가 블록 범위 변수를 바인딩할 것이므로
+                 * 추가적인 클로저를 사용하지 않아도 완벽하게 동작할 것이다.
+                */
+                let item = helpText[i];
+
+                document.getElementById(item.id).onfocus = function() {
+                    showHelp(item.help);
+                }
+            }
+        }
+
+        setupHelp();
+    </script>
+</body>
+</html>

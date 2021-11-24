@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure mistake</title>
+</head>
+<body>
+    <p id="help">Help</p>
+    <p>email:<input type="text" id="email" name="email" /></p>
+    <p>name:<input type="text" id="name" name="name" /></p>
+    <p>age:<input type="text" id="age" name="age" /></p>
+    <script>
+        function showHelp(help) {
+            document.getElementById("help").innerHTML = help;
+        }
+
+        function setupHelp() {
+            var helpText = [
+                {"id": "email", "help": "Your email address"},
+                {"id": "name", "help": "Your full name"},
+                {"id": "age", "help": "Your age"},
+            ];
+
+            for (var i=0; i<helpText.length; i++) {
+                var item = helpText[i];
+
+                // 아래의 할당된 함수는 for loop 내의 범위를 클로저로 갖고 있다.
+                // loop가 동작하는 동안, item은 계속 새로 할당되는데 각각의 변화하는 item을 참조한다.
+                document.getElementById(item.id).onfocus = function() {
+                    showHelp(item.help);
+                }
+            }
+        }
+
+        setupHelp();
+    </script>
+</body>
+</html>
