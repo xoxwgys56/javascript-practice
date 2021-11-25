@@ -2,6 +2,8 @@
 
 [javascript.info 기본문법 요약](https://ko.javascript.info/javascript-specials#ref-560)
 
+## how to use
+
 아래와 같이 사용할 수 있습니다.  
 
 ```js
@@ -19,6 +21,19 @@
 되도록 `use strict`를 적어주는 것이 좋습니다.  
 그러나 `class`나 `module`방식을 이용한다면, 모던 자바스크립트를 사용하는 것이기 때문에 `use strict`가 자동으로 적용되니 생략해도 됩니다.  
 하지만 그렇지 않다면 `use strict`를 붙이는 것을 권합니다.  
+
+## use in browser
+
+```js
+(function() {
+    "use strict"
+
+    // body of script
+})
+```
+
+위와 같이 사용할 수 있다. (하연 블로그에서 가져온 내용)
+
 
 ## Read more
 
