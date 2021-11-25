@@ -63,3 +63,9 @@ const reformattedArray = kvArray.map(function(item) {
     return rItem;
 });
 ```
+
+---
+
+## References
+
+- [MDN map function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
